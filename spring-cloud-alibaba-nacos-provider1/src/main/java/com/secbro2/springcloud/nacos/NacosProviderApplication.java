@@ -4,7 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
+// 版本不同，低版本需要明确使用@EnableDiscoveryClient注解
+//@EnableDiscoveryClient
 @SpringBootApplication
 public class NacosProviderApplication {
 

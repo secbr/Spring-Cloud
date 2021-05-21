@@ -22,8 +22,13 @@ public class UserController {
     public UserDetail getUserById(Integer userId) {
         logger.info("查询用户信息，userId={}", userId);
         UserDetail detail = new UserDetail();
-        detail.setUserId(1);
-        detail.setUsername("Tom");
+        if (userId == 1) {
+            detail.setUserId(1);
+            detail.setUsername("Tom");
+        } else {
+            detail.setUserId(2);
+            detail.setUsername("Other");
+        }
         return detail;
     }
 }
