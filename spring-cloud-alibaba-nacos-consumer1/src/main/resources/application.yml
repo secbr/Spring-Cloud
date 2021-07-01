@@ -6,6 +6,16 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+    loadbalancer:
+      retry:
+        # 开启重试
+        enabled: true
+        # 同一实例最大尝试次数
+        max-retries-on-same-service-instance: 1
+        # 其他实例最大尝试次数
+        max-retries-on-next-service-instance: 2
+        # 所有操作开启重试（慎重使用，特别是POST提交，幂等性保障）
+        retry-on-all-operations: true
 
 # 消费者将要去访问的微服务名称（注册成功进nacos的微服务提供者）
 service-url:
